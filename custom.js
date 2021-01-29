@@ -1,54 +1,55 @@
-const btnIncrease = document.getElementById("plusButton");
-btnIncrease.addEventListener("click", function () {
-  firstClass(true);
-});
-
-const btnDecrease = document.getElementById("minusButton");
-btnDecrease.addEventListener("click", function () {
-  firstClass(false);
-});
-function firstClass(isIncreased) {
-  const currentInput = document.getElementById("currentInput");
-  const currentInputNumber = parseInt(currentInput.value);
-  let addedItem = currentInputNumber;
+function allCustomerClass(cruise, isIncreased) {
+  const cruiseClass_Input = document.getElementById(cruise + "_Input");
+  const cruiseClass_InputNumber = parseInt(cruiseClass_Input.value);
+  let addedItem1 = cruiseClass_InputNumber;
   if (isIncreased == true) {
-    addedItem = currentInputNumber + 1;
+    addedItem1 = cruiseClass_InputNumber + 1;
   }
-  if (isIncreased == false && currentInputNumber > 0) {
-    addedItem = currentInputNumber - 1;
+  if (isIncreased == false && cruiseClass_InputNumber > 0) {
+    addedItem1 = cruiseClass_InputNumber - 1;
   }
-  document.getElementById("currentInput").value = addedItem;
-
-  const totalVipPrice = addedItem * 150;
-  document.getElementById("vipPrice").innerText = totalVipPrice;
+  cruiseClass_Input.value = addedItem1;
+  let totalcruisePrice = 0;
+  if (cruise == "firstClass") {
+    totalcruisePrice = addedItem1 * 150;
+  }
+  if (cruise == "economyClass") {
+    totalcruisePrice = addedItem1 * 100;
+  }
+  // const totalcruisePrice = addedItem1 * 100;
+  document.getElementById(cruise + "_Price").innerText = totalcruisePrice;
 }
 
+// function firstClass(isIncreased) {
+//   const firstClass_Input = document.getElementById("firstClass_Input");
+//   const firstClass_InputNumber = parseInt(firstClass_Input.value);
+//   let addedItem = firstClass_InputNumber;
+//   if (isIncreased == true) {
+//     addedItem = firstClass_InputNumber + 1;
+//   }
+//   if (isIncreased == false && firstClass_InputNumber > 0) {
+//     addedItem = firstClass_InputNumber - 1;
+//   }
+//   firstClass_Input.value = addedItem;
 
-// For Economy Class
+//   const totalFirstClassPrice = addedItem * 150;
+//   document.getElementById("firstClass_Price").innerText = totalFirstClassPrice;
+// }
 
-const btnIncrease1 = document.getElementById("plusButton1");
-btnIncrease1.addEventListener("click", function () {
-  economyClass(true);
-});
+// // For Economy Class
 
-const btnDecrease1 = document.getElementById("minusButton1");
-btnDecrease1.addEventListener("click", function () {
-    economyClass(false);
-});
-function economyClass(isIncreased) {
-  const currentInput1 = document.getElementById("currentInput1");
-  const currentInputNumber1 = parseInt(currentInput1.value);
-  let addedItem1 = currentInputNumber1;
-  if (isIncreased == true) {
-    addedItem1 = currentInputNumber1 + 1;
-  }
-  if (isIncreased == false && currentInputNumber1 > 0) {
-    addedItem1 = currentInputNumber1 - 1;
-  }
-  document.getElementById("currentInput1").value = addedItem1;
+// function economyClass(isIncreased) {
+//   const economyClass_Input = document.getElementById("economyClass_Input");
+//   const economyClass_InputNumber = parseInt(economyClass_Input.value);
+//   let addedItem1 = economyClass_InputNumber;
+//   if (isIncreased == true) {
+//     addedItem1 = economyClass_InputNumber + 1;
+//   }
+//   if (isIncreased == false && economyClass_InputNumber > 0) {
+//     addedItem1 = economyClass_InputNumber - 1;
+//   }
+//   economyClass_Input.value = addedItem1;
 
-  const totalEconomyPrice = addedItem1 * 100;
-  document.getElementById("economyClass").innerText = totalEconomyPrice;
-}
-
-
+//   const totalEconomyPrice = addedItem1 * 100;
+//   document.getElementById("economyClass_Price").innerText = totalEconomyPrice;
+// }
