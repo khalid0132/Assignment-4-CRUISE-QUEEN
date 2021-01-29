@@ -17,56 +17,38 @@ function firstClass(isIncreased) {
   if (isIncreased == false && currentInputNumber > 0) {
     addedItem = currentInputNumber - 1;
   }
-  //   const addedItem = currentInputNumber - 1;
   document.getElementById("currentInput").value = addedItem;
 
   const totalVipPrice = addedItem * 150;
   document.getElementById("vipPrice").innerText = totalVipPrice;
 }
 
-// const btnIncrease = document.getElementById("plusButton");
-// btnIncrease.addEventListener("click", function () {
-//   const currentInput = document.getElementById("currentInput");
-//   const currentInputNumber = parseInt(currentInput.value);
-//   const addedItem = currentInputNumber + 1;
-//   document.getElementById("currentInput").value = addedItem;
-
-//   //   const vipPrice = document.getElementById("vipPrice");
-//   //   const addedVipPrice = parseInt(vipPrice.innerText);
-//   const totalVipPrice = addedItem * 150;
-//   document.getElementById("vipPrice").innerText = totalVipPrice;
-// });
-
-// const btnDecrease = document.getElementById("minusButton");
-// btnDecrease.addEventListener("click", function () {
-//   const currentInput = document.getElementById("currentInput");
-//   const currentInputNumber = parseInt(currentInput.value);
-//   const addedItem = currentInputNumber - 1;
-//   document.getElementById("currentInput").value = addedItem;
-
-//   const totalVipPrice = addedItem * 150;
-//   document.getElementById("vipPrice").innerText = totalVipPrice;
-// });
 
 // For Economy Class
+
 const btnIncrease1 = document.getElementById("plusButton1");
 btnIncrease1.addEventListener("click", function () {
-  const currentInput1 = document.getElementById("currentInput1");
-  const currentInputNumber1 = parseInt(currentInput1.value);
-  const addedItem1 = currentInputNumber1 + 1;
-  document.getElementById("currentInput1").value = addedItem1;
-
-  const totalEconomyPrice = addedItem1 * 100;
-  document.getElementById("economyClass").innerText = totalEconomyPrice;
+  economyClass(true);
 });
 
 const btnDecrease1 = document.getElementById("minusButton1");
 btnDecrease1.addEventListener("click", function () {
+    economyClass(false);
+});
+function economyClass(isIncreased) {
   const currentInput1 = document.getElementById("currentInput1");
   const currentInputNumber1 = parseInt(currentInput1.value);
-  const addedItem1 = currentInputNumber1 - 1;
+  let addedItem1 = currentInputNumber1;
+  if (isIncreased == true) {
+    addedItem1 = currentInputNumber1 + 1;
+  }
+  if (isIncreased == false && currentInputNumber1 > 0) {
+    addedItem1 = currentInputNumber1 - 1;
+  }
   document.getElementById("currentInput1").value = addedItem1;
 
   const totalEconomyPrice = addedItem1 * 100;
   document.getElementById("economyClass").innerText = totalEconomyPrice;
-});
+}
+
+
