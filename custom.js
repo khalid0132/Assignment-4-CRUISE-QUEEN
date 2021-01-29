@@ -1,55 +1,42 @@
 function allCustomerClass(cruise, isIncreased) {
   const cruiseClass_Input = document.getElementById(cruise + "_Input");
   const cruiseClass_InputNumber = parseInt(cruiseClass_Input.value);
-  let addedItem1 = cruiseClass_InputNumber;
+  let ticketCount = cruiseClass_InputNumber;
   if (isIncreased == true) {
-    addedItem1 = cruiseClass_InputNumber + 1;
+    ticketCount = cruiseClass_InputNumber + 1;
   }
   if (isIncreased == false && cruiseClass_InputNumber > 0) {
-    addedItem1 = cruiseClass_InputNumber - 1;
+    ticketCount = cruiseClass_InputNumber - 1;
   }
-  cruiseClass_Input.value = addedItem1;
-  let totalcruisePrice = 0;
+  cruiseClass_Input.value = ticketCount;
+  let totalCruisePrice = 0;
   if (cruise == "firstClass") {
-    totalcruisePrice = addedItem1 * 150;
+    totalCruisePrice = ticketCount * 150;
   }
   if (cruise == "economyClass") {
-    totalcruisePrice = addedItem1 * 100;
+    totalCruisePrice = ticketCount * 100;
   }
-  // const totalcruisePrice = addedItem1 * 100;
-  document.getElementById(cruise + "_Price").innerText = totalcruisePrice;
+  // const totalCruisePrice = addedItem1 * 100;
+  document.getElementById(cruise + "_Price").innerText = totalCruisePrice;
+  subtotalAmount();
 }
 
-// function firstClass(isIncreased) {
-//   const firstClass_Input = document.getElementById("firstClass_Input");
-//   const firstClass_InputNumber = parseInt(firstClass_Input.value);
-//   let addedItem = firstClass_InputNumber;
-//   if (isIncreased == true) {
-//     addedItem = firstClass_InputNumber + 1;
-//   }
-//   if (isIncreased == false && firstClass_InputNumber > 0) {
-//     addedItem = firstClass_InputNumber - 1;
-//   }
-//   firstClass_Input.value = addedItem;
+function subtotalAmount() {
+  const firstClass = document.getElementById("firstClass_Input");
+  const firstClassCount = parseInt(firstClass.value);
 
-//   const totalFirstClassPrice = addedItem * 150;
-//   document.getElementById("firstClass_Price").innerText = totalFirstClassPrice;
-// }
+  const economyClass = document.getElementById("economyClass_Input");
+  const economyClassCount = parseInt(economyClass.value);
 
-// // For Economy Class
+  const subtotal = firstClassCount * 150 + economyClassCount * 100;
 
-// function economyClass(isIncreased) {
-//   const economyClass_Input = document.getElementById("economyClass_Input");
-//   const economyClass_InputNumber = parseInt(economyClass_Input.value);
-//   let addedItem1 = economyClass_InputNumber;
-//   if (isIncreased == true) {
-//     addedItem1 = economyClass_InputNumber + 1;
-//   }
-//   if (isIncreased == false && economyClass_InputNumber > 0) {
-//     addedItem1 = economyClass_InputNumber - 1;
-//   }
-//   economyClass_Input.value = addedItem1;
+  document.getElementById("subtotal").innerText = subtotal;
 
-//   const totalEconomyPrice = addedItem1 * 100;
-//   document.getElementById("economyClass_Price").innerText = totalEconomyPrice;
-// }
+  // for Tax
+  const tax = subtotal * 0.1;
+  document.getElementById("taxableAmount").innerText = Math.round(tax);
+
+  // for grandTotal
+  const grandTotal = subtotal + tax;
+  document.getElementById("finalAmount").innerText = grandTotal;
+}
