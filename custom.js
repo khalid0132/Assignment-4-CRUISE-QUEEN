@@ -1,6 +1,7 @@
 function allCustomerClass(cruise, isIncreased) {
   const cruiseClass_Input = document.getElementById(cruise + "_Input");
   const cruiseClass_InputNumber = parseInt(cruiseClass_Input.value);
+
   let ticketCount = cruiseClass_InputNumber;
   if (isIncreased == true) {
     ticketCount = cruiseClass_InputNumber + 1;
@@ -9,6 +10,7 @@ function allCustomerClass(cruise, isIncreased) {
     ticketCount = cruiseClass_InputNumber - 1;
   }
   cruiseClass_Input.value = ticketCount;
+
   let totalCruisePrice = 0;
   if (cruise == "firstClass") {
     totalCruisePrice = ticketCount * 150;
@@ -16,11 +18,12 @@ function allCustomerClass(cruise, isIncreased) {
   if (cruise == "economyClass") {
     totalCruisePrice = ticketCount * 100;
   }
-  // const totalCruisePrice = addedItem1 * 100;
+
   document.getElementById(cruise + "_Price").innerText = totalCruisePrice;
   subtotalAmount();
 }
 
+//for subtotal
 function subtotalAmount() {
   const firstClass = document.getElementById("firstClass_Input");
   const firstClassCount = parseInt(firstClass.value);
@@ -43,7 +46,6 @@ function subtotalAmount() {
 
 // secondPage------------
 const submitArea = document.getElementById("bookNow");
-
 submitArea.addEventListener("click", function () {
   document.getElementById("main-content").style.display = "none";
   document.getElementById("secondPage").style.display = "block";
