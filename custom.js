@@ -40,3 +40,11 @@ function subtotalAmount() {
   const grandTotal = subtotal + tax;
   document.getElementById("finalAmount").innerText = grandTotal;
 }
+
+// secondPage------------
+const submitArea = document.getElementById("bookNow");
+
+submitArea.addEventListener("click", function () {
+  document.getElementById("main-content").style.display = "none";
+  document.getElementById("secondPage").style.display = "block";
+});

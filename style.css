@@ -122,3 +122,60 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+.swedBtn{
+    padding: 15px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: rgb(201, 201, 33);
+    box-shadow: 5px 5px 10px blueviolet;
+    cursor: pointer;
+}
+.btn-style{
+    cursor: pointer;
+}
+
+#secondPage{
+    /* margin: 100px 0px; */
+    text-align: center;
+    background: url('images/viking1.jpg') no-repeat center/cover;
+    display: none;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    position: relative;
+    z-index: 1;
+}
+#secondPage::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: -1;
+}
+#secondPage h1,h5{
+    font-size: 50px;
+    font-weight: 800;
+    color: yellowgreen;
+    padding-bottom: 20px;
+}
+#secondPage h5{
+    color: yellow;
+}
+#secondPage h3{
+    font-weight: 800;
+    color: yellow;
+    padding-bottom: 40px;
+}
+#mealBtn{
+    padding: 15px 20px;
+    color: rgb(168, 247, 12);
+    background: rgb(202, 82, 82);
+    box-shadow: 5px 5px 10px blue;
+    font-size: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+
+}

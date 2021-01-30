@@ -27,7 +27,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id='main-content' class="main-content container">
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
@@ -63,8 +63,8 @@
                     <input id="firstClass_Input" class="inp-style inp-width" type="number" name="" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                    <p><button onclick="allCustomerClass('firstClass', true)">+</button></p>
-                    <p><button onclick="allCustomerClass('firstClass', false)">-</button></p>
+                    <p><button onclick="allCustomerClass('firstClass', true)" class="swedBtn">+</button></p>
+                    <p><button onclick="allCustomerClass('firstClass', false)" class="swedBtn">-</button></p>
                     <!-- <p>+ -</p> -->
                 </div>
             </div>
@@ -75,8 +75,8 @@
                     <input id="economyClass_Input" class="inp-style inp-width" type="number" name="" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                    <p><button onclick="allCustomerClass('economyClass', true)">+</button></p>
-                    <p><button onclick="allCustomerClass('economyClass', false)">-</button></p>
+                    <p><button onclick="allCustomerClass('economyClass', true)" class="swedBtn">+</button></p>
+                    <p><button onclick="allCustomerClass('economyClass', false)" class="swedBtn">-</button></p>
                     <!-- <p> <span>+</span> <span>-</span> </p> -->
                 </div>
             </div>
@@ -108,9 +108,17 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id='bookNow' class="btn-style">Book Now</button>
         </div>
+
     </main>
+    <section id="secondPage">
+        <h1>Välkommer Till Sverige</h1>
+        <h5>Welcome to Sweden</h5>
+        <h3>Your Viking Line cruise trip from Stockholm to Helsinki is confirmed</h3>
+        <button><a href="https://www.swish.nu/" id="mealBtn">Pay by Swish/Mobile</a></button>
+        <button><a href="https://www.americanexpress.com/sv-se/account/login" id="mealBtn">Payment by Card</a> </button>
+    </section>
 
     <!--Thank You-->
 
